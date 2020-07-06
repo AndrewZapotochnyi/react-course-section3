@@ -4,17 +4,17 @@ console.log("App.js is running")
 // user title/subtitle in the template
 // render template
 
-const title = {
-  title: 'Indecision App',
-  subtitle: 'Subtitle'
-}
+// const title = {
+//   title: 'Indecision App',
+//   subtitle: 'Subtitle'
+// }
 
-const template = (
-  <div> 
-    <h1 id="someid">{title.title}</h1> 
-    <p>{title.subtitle}</p>
-  </div>
-);
+// const template = (
+//   <div> 
+//     <h1 id="someid">{title.title}</h1> 
+//     <p>{title.subtitle}</p>
+//   </div>
+// );
 
 // Create a template a new JSX expression
 // root div
@@ -23,30 +23,48 @@ const template = (
 //    p = Location: Toronto
 // Render template 2
 
-const user = {
-  name: 'Andrew',
-  age: 35,
-  location: 'Toronto'
+// const user = {
+//   name: 'Andrew',
+//   age: 35,
+//   location: 'Toronto'
+// }
+
+// const userName = 'Andrew Zapotochnyi';
+// const userAge = 35;
+// const userLocation = "Toronto"
+
+// const getFirstName = (name) => name.split(' ')[0];
+
+// if (userName) {
+//   getFirstName(userName);
+// }
+
+// const template2 = (
+//   <div>
+//     <h1>{getFirstName(userName)}</h1>
+//     <p>Age: {user.age}</p>
+//     <p>Location: {user.location}</p>
+
+//   </div>
+// );
+
+let count = 0;
+const addOne = () => {
+  console.log("addOne");
 }
 
-const userName = 'Andrew Zapotochnyi';
-const userAge = 35;
-const userLocation = "Toronto"
-
-const getFirstName = (name) => name.split(' ')[0];
-
-if (userName) {
-  getFirstName(userName);
+const minusOne = () => {
+  console.log("minusOne");
 }
 
-const template2 = (
+const templateTwo = (
   <div>
-    <h1>{getFirstName(userName)}</h1>
-    <p>Age: {user.age}</p>
-    <p>Location: {user.location}</p>
-
+    <h1>Count {count}</h1>
+    <button onClick={addOne}>+1</button>
+    <button onClick={minusOne}>-1</button>
   </div>
-);
+)
+
 
 const appRoot = document.getElementById('app');
 
@@ -63,4 +81,4 @@ const multiplier = {
 
 console.log(multiplier.multiply());
 
-ReactDOM.render(template2, appRoot);
+ReactDOM.render(templateTwo, appRoot);

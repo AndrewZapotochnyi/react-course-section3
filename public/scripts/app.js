@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 console.log("App.js is running");
 
@@ -6,25 +6,17 @@ console.log("App.js is running");
 // user title/subtitle in the template
 // render template
 
-var title = {
-  title: 'Indecision App',
-  subtitle: 'Subtitle'
-};
+// const title = {
+//   title: 'Indecision App',
+//   subtitle: 'Subtitle'
+// }
 
-var template = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    { id: 'someid' },
-    title.title
-  ),
-  React.createElement(
-    'p',
-    null,
-    title.subtitle
-  )
-);
+// const template = (
+//   <div> 
+//     <h1 id="someid">{title.title}</h1> 
+//     <p>{title.subtitle}</p>
+//   </div>
+// );
 
 // Create a template a new JSX expression
 // root div
@@ -33,43 +25,58 @@ var template = React.createElement(
 //    p = Location: Toronto
 // Render template 2
 
-var user = {
-  name: 'Andrew',
-  age: 35,
-  location: 'Toronto'
+// const user = {
+//   name: 'Andrew',
+//   age: 35,
+//   location: 'Toronto'
+// }
+
+// const userName = 'Andrew Zapotochnyi';
+// const userAge = 35;
+// const userLocation = "Toronto"
+
+// const getFirstName = (name) => name.split(' ')[0];
+
+// if (userName) {
+//   getFirstName(userName);
+// }
+
+// const template2 = (
+//   <div>
+//     <h1>{getFirstName(userName)}</h1>
+//     <p>Age: {user.age}</p>
+//     <p>Location: {user.location}</p>
+
+//   </div>
+// );
+
+var count = 0;
+var addOne = function addOne() {
+  console.log("addOne");
 };
 
-var userName = 'Andrew Zapotochnyi';
-var userAge = 35;
-var userLocation = "Toronto";
-
-var getFirstName = function getFirstName(name) {
-  return name.split(' ')[0];
+var minusOne = function minusOne() {
+  console.log("minusOne");
 };
 
-if (userName) {
-  getFirstName(userName);
-}
-
-var template2 = React.createElement(
-  'div',
+var templateTwo = React.createElement(
+  "div",
   null,
   React.createElement(
-    'h1',
+    "h1",
     null,
-    getFirstName(userName)
+    "Count ",
+    count
   ),
   React.createElement(
-    'p',
-    null,
-    'Age: ',
-    user.age
+    "button",
+    { onClick: addOne },
+    "+1"
   ),
   React.createElement(
-    'p',
-    null,
-    'Location: ',
-    user.location
+    "button",
+    { onClick: minusOne },
+    "-1"
   )
 );
 
@@ -92,4 +99,4 @@ var multiplier = {
 
 console.log(multiplier.multiply());
 
-ReactDOM.render(template2, appRoot);
+ReactDOM.render(templateTwo, appRoot);
