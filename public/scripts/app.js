@@ -20,6 +20,11 @@ var onFormSubmit = function onFormSubmit(event) {
   }
 };
 
+var onRemoveAll = function onRemoveAll() {
+  app.options = [];
+  renderFunction();
+};
+
 var appRoot = document.getElementById('app');
 
 var renderFunction = function renderFunction() {
@@ -42,23 +47,15 @@ var renderFunction = function renderFunction() {
       app.options.length > 0 ? 'Here are your options' : 'No options'
     ),
     React.createElement(
-      'p',
-      null,
-      app.options.length
-    ),
-    React.createElement(
       'ol',
       null,
-      React.createElement(
-        'li',
-        null,
-        'Item one'
-      ),
-      React.createElement(
-        'li',
-        null,
-        'Item two'
-      )
+      app.options.map(function (option) {
+        return React.createElement(
+          'li',
+          { key: option },
+          option
+        );
+      })
     ),
     React.createElement(
       'form',
@@ -69,6 +66,11 @@ var renderFunction = function renderFunction() {
         null,
         'Add Option'
       )
+    ),
+    React.createElement(
+      'button',
+      { onClick: onRemoveAll },
+      'Remove All'
     )
   );
 
