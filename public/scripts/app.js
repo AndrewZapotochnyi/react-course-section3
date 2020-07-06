@@ -52,51 +52,66 @@ console.log("App.js is running");
 
 var count = 0;
 var addOne = function addOne() {
-  console.log("addOne");
+  // console.log("addOne");
+  count++;
+  renderCounterApp();
 };
 
 var minusOne = function minusOne() {
-  console.log("minusOne");
+  // console.log("minusOne");
+  count--;
+  renderCounterApp();
 };
 
-var templateTwo = React.createElement(
-  "div",
-  null,
-  React.createElement(
-    "h1",
-    null,
-    "Count ",
-    count
-  ),
-  React.createElement(
-    "button",
-    { onClick: addOne },
-    "+1"
-  ),
-  React.createElement(
-    "button",
-    { onClick: minusOne },
-    "-1"
-  )
-);
+var reset = function reset() {
+  // console.log("reset");
+  count = 0;
+  renderCounterApp();
+};
 
 var appRoot = document.getElementById('app');
 
-var multiplier = {
-  // array of numbers
-  numbers: [1, 2, 3, 4, 5],
-  // multiplyBy
-  multiplyBy: 100,
-  // multiply 
-  multiply: function multiply() {
-    var _this = this;
+var renderCounterApp = function renderCounterApp() {
+  var templateTwo = React.createElement(
+    "div",
+    null,
+    React.createElement(
+      "h1",
+      null,
+      "Count ",
+      count
+    ),
+    React.createElement(
+      "button",
+      { onClick: addOne },
+      "+1"
+    ),
+    React.createElement(
+      "button",
+      { onClick: minusOne },
+      "-1"
+    ),
+    React.createElement(
+      "button",
+      { onClick: reset },
+      "reset"
+    )
+  );
 
-    return this.numbers.map(function (num) {
-      return _this.multiplyBy * num;
-    });
-  }
+  ReactDOM.render(templateTwo, appRoot);
 };
 
-console.log(multiplier.multiply());
+renderCounterApp();
 
-ReactDOM.render(templateTwo, appRoot);
+// const multiplier = {
+//   // array of numbers
+//   numbers: [1, 2, 3, 4, 5],
+//   // multiplyBy
+//   multiplyBy: 100,
+//   // multiply 
+//   multiply() {
+//     return this.numbers.map((num) => this.multiplyBy * num);
+//   }
+// }
+
+// console.log(multiplier.multiply());
