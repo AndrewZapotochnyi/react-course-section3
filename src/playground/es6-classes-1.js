@@ -20,9 +20,35 @@ class Person {
 
 }
 
-const me = new Person("Andrew", 35);
+class Student extends Person {
+  constructor(name, age, major) {
+    super(name, age);
+    this.major = major;
+  }
+
+  hasMajor() {
+    return !!this.major;
+  }
+
+  getDescription() {
+    let description = super.getDescription();
+
+    if (this.hasMajor()) {
+      description += ` Their major is ${this.major}`;
+    }
+
+    return description;
+  }
+
+}
+
+
+const me = new Student("Andrew", 35, "Marketing");
 console.log(me.getGreeting());
+console.log(me);
 console.log(me.getDescription());
 
-const other = new Person();
-console.log(other.getGreeting());
+// Traveler -> Person
+
+// const other = new Person();
+// console.log(other.getGreeting());
