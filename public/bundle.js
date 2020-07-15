@@ -63,13 +63,14 @@
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_js__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_js__ = __webpack_require__(35);
 // import './util.js';
 
 
@@ -77,7 +78,8 @@ console.log("App.js is running 4real");
 console.log(__WEBPACK_IMPORTED_MODULE_0__util_js__["a" /* square */](4));
 
 /***/ }),
-/* 1 */
+
+/***/ 35:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -90,4 +92,5 @@ const square = (x) => x * x;
 // exports - default export - named exports
 
 /***/ })
-/******/ ]);
+
+/******/ });
